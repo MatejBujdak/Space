@@ -1,0 +1,311 @@
+/*#region NASTAVENIE STRANKY */
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+body{
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+main{
+  padding-top: 70px;
+}
+/* nastavenie flexibilného kontajneru */
+.container{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: auto;
+  height: auto;
+  padding: 20px;
+  font-size: 1.5em;
+}
+/* odsadenie nadpisov v kontajnery */
+.container h1, .container h3{
+  margin: 20px 0 20px 0;
+}
+/*#endregion*/
+
+/*#region NAVIGACIA */
+
+/* vzhlad navigácie */
+nav{
+  background-color: black;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 20px;
+	box-shadow: 0px 0px 5px 2px white;
+}
+.nav{
+  position: fixed;
+  width: 100%;
+  z-index: 50;
+}
+/* nadpis v logu */
+.logotext{
+  display: flex;
+  color: white;
+  justify-content: left;
+}
+.logotext h1{
+  padding: 0;
+  font-size: 40px;
+  margin-left: 10px;
+}
+/* obrazok loga */
+.logo{
+  height: 50px;
+}
+/* odkazy v navigácii */
+.nav-list{
+  list-style-type:none;
+}
+.nav-list .list-item{
+  display: inline-block;
+  padding: 20px 10px; 
+}
+nav a{
+  color: white;
+  text-decoration: none;
+}
+nav a:hover{
+  color: rgb(36, 36, 228);
+  transition: all 0.3s;
+}
+/* hamburger */
+.menu{
+  display: none;
+}
+.menu-line{
+  width: 20px;
+  height: 3px;
+  background-color:white;
+  margin-bottom: 4px;
+}
+
+/***** RESPONZIVITA NAVIGACIE*****/
+@media all and (max-width: 980px){
+  /* vzhlad navigácie */
+  nav{
+      flex-direction: column;
+      position: relative;
+  }
+  /* nadpis v logu */
+  .logotext h1{
+      margin-top: 15px;
+  }
+  /* hamburger */
+  .menu{
+      display: block;
+      position: absolute;
+      right: 35px;
+      top: 30px;
+  }
+  /* vycentrovanie loga */
+  .logo{
+      margin-top: 10px;
+      margin-bottom: 10px;
+  }
+  /* odkazy v navigácii */
+  .nav-list{
+      list-style-type: none;
+      width: 100%;
+      text-align: center;
+      padding-top: 10px;
+      display: none;
+  }
+  /* aktivácia hamburgra */
+  .nav-list .list-item{
+      display: block;
+      border-top: 1px solid white;
+  }
+  .active {
+      display: block;
+  }
+}
+/*#endregion*/
+
+/*#region SLIDER */
+
+.slideshow-container {
+  display: flex;
+  max-width: 100%;
+  position: relative;
+  margin: auto;  
+}
+
+/* tlačidlá na posúvanie */
+.right, .left {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;   /* šípka */
+  user-select: none;            /* zabráni označovať prvky používateľom */
+}
+.right {
+  right: 0;
+  border-radius: 3px 0 0 3px;  /* šípka */
+}
+.right:hover, .left:hover {
+  background-color: rgba(40, 4, 123, 0.8);
+}
+
+/* číslovanie slidov */
+.order {
+  color: #f2f2f2;
+  font-size: 30px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+/* nastavenie obrazkov v slide na celú šírku */
+.sliderimg{
+  width: 100%;
+}
+
+
+/*#endregion */
+
+/*#region TABUĽKA */
+
+/* rozloženie */
+.stars{
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  width: 90%;
+  margin: auto;
+
+}
+/* tabuľka */
+.table{
+  border: 1px solid #ccc;
+  margin: 0;
+  padding: 0;
+  width: 50%;
+  table-layout: fixed;
+  color: black;
+}
+/* políčka v tabuľke */
+.table tr{
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+}
+/* umiestenie textu v políčkach */
+.table th, .table td{
+  padding: 0.7em;
+  text-align: center;
+}
+/* úprava nadpisov v tabuľke */
+.table th{
+  font-size: .85em;
+  letter-spacing: .1em;
+}
+/*#endregion */
+
+/*#region KREATÍVNY BOD 1 */
+caption{
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+}
+.calculator {
+  table-layout: fixed;
+  padding: 10px;
+  border-radius: 1em;
+  height: 450px;
+  width: 40%;
+  background-color: #191b28;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.display-box {
+  background-color: #dcdbe1;
+  border: solid black 0.5px;
+  color: black;
+  height: 65%;
+}
+
+input {
+  background-color: #2e077b;
+  color: white;
+  border: solid black 0.5px;
+  width: 100%;
+  border-radius: 5px;
+  height: 70%;
+  outline: none;
+}
+input:active{
+  background: #0028b7;
+}
+@media screen and (max-width: 800px){
+  .stars{
+    flex-wrap: wrap;
+  }
+  .table{
+    width: 100%;
+  }
+  .calculator{
+    margin-top: 20px;
+    width: 400%;
+  }
+}
+/*#endregion  */
+
+/*#region FOOTER */
+
+/* nastavenie vzhladu */
+.footer{
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  display: flex;
+  background-color: black;
+  color: white;
+  padding: 20px;  
+  margin-top: 50px;
+  box-shadow: 0px 0px 5px 2px white;
+  flex-direction: column;
+}
+/* nastavenie textu */
+.copyright{
+  font-size: 0.75em;
+  line-height: 1.5em;
+  text-align: center;
+  margin: auto;  
+  flex-direction: column;
+}
+/* obrázky s kontaktom */
+.icon img{
+  padding-right: 4vw;
+  height: 30px;
+  margin: 15px;
+}
+/* rozloženie obrazkov s kontaktom */
+.icon{
+  text-align: center;
+  width: 80%;
+  margin: auto;
+}
+/***** RESPONZIVITA *****/
+@media only screen and (max-width: 800px) {
+  /* úprava obrázkov s kontaktom */
+  .icon img{
+    padding: 0;
+    height: 40px;
+    margin: 15px;
+  }
+}
+/*#endregion  */

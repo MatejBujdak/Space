@@ -1,0 +1,312 @@
+/*#region NASTAVENIE STRANKY */
+/* importovanie textu */
+@font-face {
+    font-family: 'algerian';
+    src: url(/font/Algerian\ Regular.ttf);
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+main{
+  padding-top: 35px;
+  background-color: rgba(55, 53, 53, 0.8);
+  margin-top: 50%;
+}
+/* nastavenie textu */
+article{
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+/***** RESPONZIVITA *****/
+@media  screen and (max-width:980px) {
+    main{
+        background-color: rgba(55, 53, 53, 1);
+    }
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: auto;
+  height: auto;
+  padding: 20px;
+  color: rgba(102, 94, 94, 0.188);
+  font-size: 1.5em;
+}
+/*#endregion*/  
+
+/*#region NAVIGACIA */
+
+/* vzhlad navigácie */
+nav{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: black;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 20px;    
+}
+.nav{
+    position: fixed;
+    width: 100%;
+    z-index: 20;
+}
+/* nadpis v logu */
+.logotext{
+    display: flex;
+    color: white;
+    justify-content: left;
+}
+.logotext h1{
+    padding: 0;
+    font-size: 40px;
+    margin-left: 10px;
+}
+/* obrazok loga */
+.logo{
+    height: 50px;
+}
+/* odkazy v navigácii */
+.nav-list{
+    list-style-type:none;
+}
+.nav-list .list-item{
+    display: inline-block;
+    padding: 20px 10px; 
+}
+nav a{
+    color: white;
+    text-decoration: none;
+  }
+nav a:hover{
+    color: rgb(36, 36, 228);
+    transition: all 0.3s;
+}
+/* hamburger */
+.menu{
+    display: none;
+}
+.menu-line{
+    width: 20px;
+    height: 3px;
+    background-color:white;
+    margin-bottom: 4px;
+}
+/***** RESPONZIVITA NAVIGACIE*****/
+@media all and (max-width: 980px){
+  /* vzhlad navigácie */
+  nav{
+      flex-direction: column;
+      position: relative;
+  }
+  /* nadpis v logu */
+  .logotext h1{
+      margin-top: 15px;
+  }
+  /* hamburger */
+  .menu{
+      display: block;
+      position: absolute;
+      right: 35px;
+      top: 30px;
+  }
+  /* vycentrovanie loga */
+  .logo{
+      margin-top: 10px;
+      margin-bottom: 10px;
+  }
+  /* odkazy v navigácii */
+  .nav-list{
+      list-style-type: none;
+      width: 100%;
+      text-align: center;
+      padding-top: 10px;
+      display: none;
+  }
+  /* aktivácia hamburgra */
+  .nav-list .list-item{
+      display: block;
+      border-top: 1px solid white;
+  }
+  .active {
+      display: block;
+  }
+}
+/*#endregion*/
+
+/*#region BANNER */
+
+/* umiestnenie banneru */
+.backgroundbanner{
+    display: flex;
+    text-align: center;
+}
+.backgroundbanner img{
+    width: 100%;
+    position: fixed;
+    z-index: -10;
+}
+/* text */
+.backgroundtext{
+    font-family: 'algerian',sans-serif;;
+    width: 100%;
+    font-size: 2vw;
+    position: fixed;
+    color: rgb(255, 255, 255, 0.9);   
+    letter-spacing: 10px;
+    top: 20vh;
+    z-index: -9;
+}
+
+/*#endregion */
+
+/*#region PLANETY */
+/* nadpis */
+article > h2{ 
+    text-shadow: 4px 4px rgb(34, 32, 32);
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 40px;
+}
+/* rozloženie odstavcov do 3 stĺpcov gridu */
+.grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-bottom: 50px;
+}
+/* nastavenie prvkov v gride */
+.column{
+    display: flex;
+    background-color: rgb(0, 0, 0);
+    margin: 20px;
+    padding: 20px;    
+}
+/* obrazky planét */
+.planets{
+    height: 100px;
+    width: 100px;    
+    animation: rotation 30s infinite linear;  /* animacia s menom rotation, trvanie 30s, do nekonečna, rovnomerne*/
+    margin-right: 10px;
+}
+/* nastavenie keyframe pre animaciu ratation, ktorá spôsobuje otačanie planét o 360 stupňov */
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+}  
+/* nastavenie z-indexu obrázkom planét, aby neprekrývali text pri animácii */
+.planets_text{
+    z-index: 2;
+}
+
+/* RESPONZIVITA */
+@media screen and (max-width: 1150px) {
+    /* zoskupenie planét do 2 stĺpcov */
+    .grid{
+        grid-template-columns: 1fr 1fr;
+    }
+    
+}
+@media screen and (max-width: 805px) {
+    /* zoskupenie planét do 1 stĺpca */
+    .grid{
+        grid-template-columns: 1fr;
+    }
+    
+}
+/*#endregion */
+
+/*#region MESIACE */
+
+/* nastavenie zoznamov */
+.list{
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 60px;
+}
+/* nastave spodného odsadenie pre nadpis h2 priamo patriaci divu */
+.list div > h2{
+    margin-bottom: 6px;
+}
+/* úprava listov v zozname */
+.order-list {
+	list-style-type: none;
+	counter-reset: li;      /* nastavenie obnovenia počítadla pre každý prvok listu zoznamu */
+}
+.order-list li {
+	font-size: 1rem;
+}
+/* číslovanie listu */
+.order-list li:before {
+  counter-increment: li;   /* zvýšenie hodnoty počítadla pri každom prvku li */
+  margin-right: 0.25em;
+  content: counter(li, decimal-leading-zero);  /* pridanie počítadla pre prvok li, začínajúce od nuly */
+  color: rgb(56, 4, 229);
+}
+/***** RESPONZIVITA *****/
+@media all and (max-width: 980px){
+    .list{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    
+    }
+    .order-list{
+        margin-left: 40%;
+        margin-bottom: 20px;
+    }
+    .list div> h2{
+        margin-left: 40%;
+    }
+}
+/*#endregion */
+
+/*#region FOOTER */
+
+/* nastavenie vzhladu */
+.footer{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: flex;
+    background-color: black;
+    color: white;
+    padding: 20px;  
+    box-shadow: 0px 0px 5px 2px white;
+    flex-direction: column;
+  }
+  /* nastavenie textu */
+  .copyright{
+    font-size: 0.75em;
+    line-height: 1.5em;
+    text-align: center;
+    margin: auto;  
+    flex-direction: column;
+  }
+  /* obrázky s kontaktom */
+  .icon img{
+    padding-right: 4vw;
+    height: 30px;
+    margin: 15px;
+  }
+  /* rozloženie obrazkov s kontaktom */
+  .icon{
+    text-align: center;
+    width: 80%;
+    margin: auto;
+  }
+  /***** RESPONZIVITA *****/
+  @media only screen and (max-width: 800px) {
+    /* úprava obrázkov s kontaktom */
+    .icon img{
+      padding: 0;
+      height: 40px;
+      margin: 15px;
+    }
+  }
+  /*#endregion  */
+  

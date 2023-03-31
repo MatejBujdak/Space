@@ -1,0 +1,307 @@
+/*#region NASTAVENIE STRANKY */
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+body{
+  background-color: rgb(3, 2, 35);
+}
+/*#endregion  */
+
+/*#region NAVIGACIA */
+
+/* vzhlad navigácie */
+nav{
+  background-color: black;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 20px;
+	box-shadow: 0px 0px 5px 2px white;
+}
+.nav{
+  position: fixed;
+  width: 100%;
+  z-index: 50;
+}
+/* nadpis v logu */
+.logotext{
+  display: flex;
+  color: white;
+  justify-content: left;
+}
+.logotext h1{
+  padding: 0;
+  font-size: 40px;
+  margin-left: 10px;
+}
+/* obrazok loga */
+.logo{
+  height: 50px;
+}
+/* odkazy v navigácii */
+.nav-list{
+  list-style-type:none;
+}
+.nav-list .list-item{
+  display: inline-block;
+  padding: 20px 10px; 
+}
+nav a{
+  color: white;
+  text-decoration: none;
+}
+nav a:hover{
+  color: rgb(36, 36, 228);
+  transition: all 0.3s;
+}
+/* hamburger */
+.menu{
+  display: none;
+}
+.menu-line{
+  width: 20px;
+  height: 3px;
+  background-color:white;
+  margin-bottom: 4px;
+}
+
+/***** RESPONZIVITA NAVIGACIE*****/
+@media all and (max-width: 980px){
+  /* vzhlad navigácie */
+  nav{
+      flex-direction: column;
+      position: relative;
+  }
+  /* nadpis v logu */
+  .logotext h1{
+      margin-top: 15px;
+  }
+  /* hamburger */
+  .menu{
+      display: block;
+      position: absolute;
+      right: 35px;
+      top: 30px;
+  }
+  /* vycentrovanie loga */
+  .logo{
+      margin-top: 10px;
+      margin-bottom: 10px;
+  }
+  /* odkazy v navigácii */
+  .nav-list{
+      list-style-type: none;
+      width: 100%;
+      text-align: center;
+      padding-top: 10px;
+      display: none;
+  }
+  /* aktivácia hamburgra */
+  .nav-list .list-item{
+      display: block;
+      border-top: 1px solid white;
+  }
+  .active {
+      display: block;
+  }
+}
+/*#endregion*/
+
+/*#region TEXT */
+
+/* flexibilny kontajner */
+.container{
+  display: flex;
+  flex-direction: column;
+  letter-spacing: 2px;
+  font-size: 1.2em;
+  width: 90%;
+  margin: auto;
+  height: auto;
+  padding: 50px;
+  padding-top: 80px;
+  margin-bottom: 6%;
+  color: white;
+  background-color: rgb(4, 4, 129);
+}
+/* nastavenie nadpisov */
+article h1{
+  margin: 15px 0 20px 0;
+}
+/* nastavenie textu */
+.text{
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+}
+/* nastavenie obrázkov */
+.spaceimg{
+  width: 200px;
+  height: 100%;
+  margin-left: 2vw;
+}
+
+/***** RESPONZIVITA *****/
+@media all and (max-width: 980px){
+  .text{
+    flex-wrap: wrap;
+  }
+  .spaceimg{
+    margin: 30px auto 0 auto;
+  }
+}
+/*#endregion */
+
+/*#region AKORDEON */
+
+/* širka ktoru zaberá akordeón */
+.accordion{
+  width: 80%;
+  margin: 50px auto;
+}
+/* nastavenie akordeonu */
+.accordion .label{
+  position: relative;
+  padding: 10px;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  cursor: pointer;
+}
+/* nadpis akordeonu */
+.accordion>h2{
+  margin-bottom: 20px;
+}
+/* umiestenie + na koniec akordeónu pokiaľ nieje rozkliknutý */
+.accordion .parts .label::after{
+  content: "+";
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  font-size: 1.5em;
+}
+/* umiestenie - na koniec akordeónu pri rozkliknutí*/
+.accordion .parts.activation .label::after
+{
+  content: "-";
+}
+.accordion .parts .content{
+  position: relative;
+  background-color: white;
+  height: 0;
+  transition: 0.5s;
+  overflow-y: hidden; 
+}
+/* nastavenie výšky pri rozkliknutí */
+.accordion .parts.activation .content{
+  height: 40px;
+  padding: 10px; 
+  color: black;
+}
+
+/***** RESPONZIVITA *****/
+@media all and (max-width: 980px){
+  .accordion{
+    width: 100%;
+  }
+}
+/*#endregion */
+
+/*#region FOOTER */
+
+/* nastavenie vzhladu */
+.footer{
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  display: flex;
+  background-color: black;
+  color: white;
+  padding: 20px;  
+  box-shadow: 0px 0px 5px 2px white;
+  flex-direction: column;
+}
+/* nastavenie textu */
+.copyright{
+  font-size: 0.75em;
+  line-height: 1.5em;
+  text-align: center;
+  margin: auto;  
+  flex-direction: column;
+}
+/* obrázky s kontaktom */
+.icon img{
+  padding-right: 4vw;
+  height: 30px;
+  margin: 15px;
+}
+/* rozloženie obrazkov s kontaktom */
+.icon{
+  text-align: center;
+  width: 80%;
+  margin: auto;
+}
+/***** RESPONZIVITA *****/
+@media only screen and (max-width: 800px) {
+  /* úprava obrázkov s kontaktom */
+  .icon img{
+    padding: 0;
+    height: 40px;
+    margin: 15px;
+  }
+}
+/*#endregion  */
+
+/*#region KREATIVNY BOD 3 */
+
+/* základné nastavenie */
+.banner{
+  position: fixed;
+  background-color: rgb(10, 10, 229);
+  height: 250px;
+  top: 35vh;
+  left: -200px;
+  padding-right: 20px;
+  z-index: 2;
+  cursor:pointer;
+  transition: all 0.5s;
+}
+/* nastavenie obrázku */
+.banner a img{
+  width: 200px;
+  height: 100%;
+  border-right: 1px solid rgb(255, 255, 255);
+}
+/* nastavenie textu obrázku */
+.banner a h4{
+  color: red;
+  position: absolute;
+  text-align: center;
+  width: 80%;
+}
+/* nastavenie textu lišty */
+.banner h3{
+  position: relative;
+  transform: rotate(-90deg) translateY(-25%); 
+  color: rgb(255, 255, 255);
+  bottom: 55%;
+  left: 50%;
+  cursor:pointer;
+}
+
+/* vysunutie lišty */
+.left{
+  left: 0px;
+  transition: all 0.5s;
+}
+/***** RESPONZIVITA *****/
+@media screen and (max-height: 430px) {
+  .banner{
+    top: 76px;
+  }
+  
+}
+/*#endregion */

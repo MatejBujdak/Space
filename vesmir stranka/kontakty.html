@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/kontakty.css">
+    <link rel="icon" href="img/logo.png" />
+    <title>Vesmir</title>
+</head>
+<body>
+    <header>
+
+      <!-- NAVIGACIA -->
+      <div class="nav">
+          <nav id="navigation">     
+          
+                  <div class="logotext">
+                      <img class="logo" alt="logo" src="img/logo.png">
+                      <h1>vesmir</h1>  
+                  </div> 
+                  
+                  <ul class="nav-list" id="list">
+                    <li class="list-item"><a href="index.html">domov</a></li>
+                    <li class="list-item"><a href="slnecna_sustava.html">slnečná sústava</a></li>
+                    <li class="list-item"><a href="vesmirne_projekty.html">vesmírne projekty</a></li>
+                    <li class="list-item"><a href="kontakty.html">kontakty</a></li>
+                  </ul>
+  
+                  <div class="menu" id="hamburger">
+                      <div class="menu-line"></div>
+                      <div class="menu-line"></div>
+                      <div class="menu-line"></div>
+                  </div>
+          </nav>
+        </div>
+    </header>
+    
+    <main>        
+      
+        <!-- REGISTRACIA-->
+
+        <article class="container">
+          
+          <div class="formular">
+            <form>
+        
+                <h1>registracia</h1>
+                
+                <label for="name">meno</label>
+                <input type="text" name="name" id="name" placeholder="zadajte meno">
+
+
+        
+                <label for="email">email</label>
+                <input type="email" name="email" id="email" placeholder="email">
+
+               <!-- KREATIVNY BOD 2 -->               
+                <label for="age">vek</label>
+                <input type="number" name="age" id="age" placeholder="zadajte svoj vek">
+                
+                <label for="first_password">heslo</label>
+                <input type="password" name="first_password" id="first_password" placeholder="Heslo musi obsahovat aspon 8 znakov, 1 velke pismeno a 1 cislicu!">
+
+                <label for="con_password">overenie hesla</label>
+                <input type="password" name="con_password"  id="con_password" placeholder="Znovu zadajte heslo"> 
+                
+                <label for="checkbox">potvrdenie o spracovani osobnych udajov</label>
+                <input type="checkbox" name="checkbox" id="checkbox" >
+                         
+            </form>
+            <input type="submit" class="btn" onclick="submit()">   
+          </div>   
+          
+        
+        </article>
+    </main>
+    
+    <footer>
+      <!-- ZDROJE -->
+      <div class="zdroje ">
+        
+        <h1>Zdroje</h1>
+
+         <div class="odkazy">
+            <a href="https://sk.wikipedia.org/wiki/Vesm%C3%ADr" target="_blank">wikipedia.sk Vesmir</a>
+            <a href=https://www.jagranjosh.com target="_blank">jagranjosh</a>         
+            <a href="https://viewspace.org" target="_blank">viewspace</a>
+            <a href="https://en.wikipedia.org/wiki/Space" target="_blank">wikipedia.en Space</a>
+            <a href="https://pixabay.com" target="_blank">pixabay</a>        
+            <a href="http://abyss.uoregon.edu/~js/ast121/lectures/lec17.html" target="_blank">abyss</a>
+            <a href="https://solarsystem.nasa.gov" target="_blank">solarsystem</a>
+            <a href="https://www.pexels.com/sk-sk" target="_blank">pexels</a>
+            <a href="https://unsplash.com" target="_blank">unsplash</a>
+            <a href="https://www.freepik.com" target="_blank">freepik</a>
+            <a href="https://sk.wikipedia.org/wiki/134340_Pluto" target="_blank">wikipedia.sk Pluto</a>
+            <a href="https://www.pmi.org/most-influential-projects-2021/top-10-by-industry/space" target="_blank">pmi</a>
+         </div>
+      </div>
+      <!-- COPYRIGHT -->
+      <div class="footer">
+        <div class="copyright">
+            <p>Interaktívna encyklopédia ktorej účelom je poskytnuť informácie ohladom vesmíru. </p>
+            <p>© 2022, Matej Bujdák, obsah a materiály tejto stranky sú chránené autorskými právami a nemali by sa sťahovať ani používať mimo tejto webovej lokality. </p>        
+        </div>
+
+        <!-- KONTAKTY -->
+        <div class="icon">          
+            <a href="mailto:moj.email@email.com"> <img src="img/email.jpg" alt="email"></a> 
+            <a href="tel:555-555-5555"><img src="img/call.jpg" alt="email"></a>
+        </div>
+      </div>
+
+    </footer>
+
+    <script src="javascript/kontakty.js"></script>
+</body>
+</html>

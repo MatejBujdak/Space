@@ -1,0 +1,260 @@
+/*#region NASTAVENIE STRANKY */
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+/*#endregion*/
+
+/*#region NAVIGACIA */
+
+/* vzhlad navigácie */
+nav{
+  background-color: black;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 20px;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
+.nav{
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
+/* nadpis v logu */
+.logotext{
+  display: flex;
+  color: white;
+  justify-content: left;
+}
+.logotext h1{
+  padding: 0;
+  text-transform: uppercase;
+  font-size: 40px;
+  margin-left: 10px;
+}
+/* obrazok loga */
+.logo{
+  height: 50px;
+}
+/* odkazy v navigácii */
+.nav-list{
+  list-style-type:none;
+}
+.nav-list .list-item{
+  display: inline-block;
+  padding: 20px 10px; 
+}
+nav a{
+  color: white;
+  text-decoration: none;
+}
+nav a:hover{
+  color: rgb(36, 36, 228);
+  transition: all 0.3s;
+}
+/* hamburger*/
+.menu{
+  display: none;
+}
+.menu-line{
+  width: 20px;
+  height: 3px;
+  background-color:white;
+  margin-bottom: 4px;
+}
+/***** RESPONZIVITA NAVIGACIE*****/
+@media all and (max-width: 980px){
+  /* vzhlad navigácie */
+  nav{
+    flex-direction: column;
+    position: relative;
+  }
+  /* nadpis v logu */
+  .logotext h1{
+    margin-top: 15px;
+  }
+  /* hamburger */
+  .menu{
+    display: block;
+    position: absolute;
+    right: 35px;
+    top: 30px;
+  }  
+  /* vycentrovanie loga */
+  .logo{
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  /* odkazy v navigácii */
+  .nav-list{
+    list-style-type: none;
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+    display: none;
+  }
+  /* aktivácia hamburgra */
+  .nav-list .list-item{
+    display: block;
+    border-top: 1px solid white;
+  }
+  .active {
+    display: block;
+  }
+}
+/*#endregion*/
+
+/*#region FORMULÁR */
+
+/* umiestnenie formuláru */
+.container{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 80px;
+}
+/* rozmiestnenie prvkov formuláru  */
+.formular{
+  margin-top: 50px; 
+  margin-bottom: 50px;
+	width: 850px;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	background-color: #fff;
+	box-shadow: 0px 0px 19px 5px rgba(0,0,0,9);
+}
+label{
+  display: block;
+  width: 100%;
+}
+/* vzhľad formuláru */
+input{
+	width: 80%;
+	border: 2px solid rgba(0, 0, 0, 0);
+	background-color: rgba(230, 230, 230, 0.6);
+	padding: 0.5rem 1rem;
+	font-size: 1.1rem;
+	margin-bottom: 22px;
+}
+input:hover{
+	background-color: rgba(0, 0, 0, 0.1);
+}
+form h1{
+  margin: 10px;
+  text-transform: uppercase;
+}
+.btn{
+	width: 80%;
+	padding: 0.5rem 1rem;
+	background-color: #0368ba;
+	color: #fff;
+	font-size: 1.1rem;
+	border: none;
+	cursor: pointer;
+}
+.btn:hover{
+    background-color: #044acd;
+}
+form input:focus{
+    border: 2px solid black;
+    background-color: #fff;
+}
+/*#endregion*/
+
+/*#region ZDROJE */
+
+.zdroje{  
+  background-color:  #000f2a;
+  color: white;
+  text-align: center;
+}
+.zdroje h1{
+  text-align: center;
+  padding: 15px;
+}
+
+/* rozmiestnenie prvkov do gridu */
+.odkazy{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 30px;
+  padding-bottom: 40px;
+}
+/* vzhlad odkazov */
+.odkazy a{
+  text-decoration: none;
+  color: white;
+  padding:10px;
+  width: 100%;
+  align-items: center;
+}
+.odkazy a:hover{
+  background-color: rgb(37, 153, 236);
+  border-radius: 20px;
+  font-weight: bold;
+  color: black;
+}
+/***** RESPONZIVITA *****/
+@media only screen and (max-width: 800px) {
+  .odkazy{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/*#endregion */
+
+/*#region FOOTER */
+
+/* nastavenie vzhladu */
+.footer{
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  display: flex;
+  background-color: black;
+  color: white;
+  padding: 20px;  
+  box-shadow: 0px 0px 5px 2px white;
+  flex-direction: column;
+}
+/* nastavenie textu */
+.copyright{
+  font-size: 0.75em;
+  line-height: 1.5em;
+  text-align: center;
+  margin: auto;  
+  flex-direction: column;
+}
+/* obrázky s kontaktom */
+.icon img{
+  padding-right: 4vw;
+  height: 30px;
+  margin: 15px;
+}
+/* rozloženie obrazkov s kontaktom */
+.icon{
+  text-align: center;
+  width: 80%;
+  margin: auto;
+}
+/***** RESPONZIVITA *****/
+@media only screen and (max-width: 800px) {
+  /* úprava obrázkov s kontaktom */
+  .icon img{
+    padding: 0;
+    height: 40px;
+    margin: 15px;
+  }
+}
+/*#endregion  */
